@@ -65,7 +65,7 @@ int main(void){
     uint8_t temp;
     uint8_t myTestData[100];
     uint8_t recieveData[150];
-    uint32_t testAdd = 0x400000;
+    uint32_t testAdd = 0x10000;
     int i = 0;
     for(i;i<100;i++){
         myTestData[i] = i;
@@ -74,8 +74,12 @@ int main(void){
     for(i;i<150;i++){
         recieveData[i] = 20;
     }
-    flash_stat = program_page(&flash, testAdd, myTestData, 100);
-    read_page(&flash, testAdd, recieveData, 150);
+
+    //flash_stat = erase_param_sector(&flash, testAdd);
+    while(IS_DEVICE_BUSY(get_status_reg(&flash)));
+    //flash_stat = program_page(&flash, testAdd, myTestData, 100);
+
+    flash_stat = read_page(&flash, testAdd, recieveData, 150);
     while(1){
 
         enable_write(&flash);
