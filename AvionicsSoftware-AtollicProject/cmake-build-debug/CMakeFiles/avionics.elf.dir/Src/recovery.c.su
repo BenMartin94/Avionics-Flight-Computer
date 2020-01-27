@@ -1,0 +1,5 @@
+recovery.c:45:6:recovery_init	80	static
+recovery.c:84:6:enable_mosfet	16	static
+recovery.c:98:6:activate_mosfet	16	static
+recovery.c:137:20:check_continuity	24	static
+recovery.c:160:21:check_overcurrent	24	static

@@ -1,0 +1,2 @@
+startupTask.c:54:13:eraseFlash	304	static
+startupTask.c:134:6:vTask_starter	64	static

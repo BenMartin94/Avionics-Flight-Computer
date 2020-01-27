@@ -1,0 +1,11 @@
+flash.c:60:15:enable_write	120	static
+flash.c:82:15:disable_write	120	static
+flash.c:103:16:erase_sector	128	static
+flash.c:127:16:erase_param_sector	128	static
+flash.c:152:16:erase_device	128	static
+flash.c:176:9:get_status_reg	128	static
+flash.c:187:15:program_page	136	static
+flash.c:210:16:read_page	136	static
+flash.c:232:16:check_flash_id	128	static
+flash.c:250:16:initialize_flash	72	static
+flash.c:287:10:scan_flash	288	static

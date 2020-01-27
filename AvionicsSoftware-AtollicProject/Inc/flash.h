@@ -30,18 +30,34 @@
 
 #define		READ_ID_COMMAND			0x9F
 #define 	WE_COMMAND				0x06		//Write Enable
+#define     WD_COMMAND              0x04
 #define		PP_COMMAND				0x02		//Page Program Command (write)
 #define		READ_COMMAND			0x03
 #define 	ERASE_SEC_COMMAND		0xD8
 #define 	ERASE_PARAM_SEC_COMMAND 0x20
 #define		GET_STATUS_REG_COMMAND	0x05
 #define		BULK_ERASE_COMMAND		0x60		//Command to erase the whole device.
+//new OPcodes
+
+#define READ 		0x03
+#define FASTREAD	0x0B
+#define PP			0x02
+#define ERASEALL	0xC7
+#define WRITEENABLE	0x06
+
+#define RDSR		0x05
+#define RDCR		0x15
+#define WRSR		0x01
+#define WIPMASK 	0x01
+#define WEMASK		0x02
+
 
 //Constants
 #define		MANUFACTURER_ID			0x01
 #define		DEVICE_ID_MSB			0x02
 #define		DEVICE_ID_LSB			0x16
 
+#define     EXTRA_HIGH_BYTE_MASK_32B 0xFF000000
 #define 	HIGH_BYTE_MASK_24B		0x00FF0000
 #define		MID_BYTE_MASK_24B		0x0000FF00
 #define 	LOW_BYTE_MASK_24B		0x000000FF
@@ -65,6 +81,8 @@
 #define		WAS_ERASE_ERROR(x)		((x >> E_ERR_BIT) & 0x01)
 #define		IS_WRITE_ENABLE(x)		((x >> WEL_BIT) & 0x01)
 #define		IS_DEVICE_BUSY(x)		((x >> WIP_BIT) & 0x01)
+
+
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ENUMS AND ENUM TYPEDEFS
@@ -90,6 +108,12 @@ typedef struct {
 // CONSTANTS
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+//REMOVE THESE, THIS IS ONLY FOR TESTING
+
+FlashStatus_t enable_write(FlashStruct_t * flash);
+FlashStatus_t disable_write(FlashStruct_t * flash);
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 // FUNCTION PROTOTYPES

@@ -1,0 +1,10 @@
+pressure_sensor_bmp3.c:63:8:init_bmp3_sensor	32	static
+pressure_sensor_bmp3.c:101:8:get_sensor_data	24	static
+pressure_sensor_bmp3.c:115:16:bmp3_config	32	static
+pressure_sensor_bmp3.c:140:6:init_bmp	24	static
+pressure_sensor_bmp3.c:154:6:calibrate_bmp	48	static
+pressure_sensor_bmp3.c:162:6:vTask_pressure_sensor_bmp3	80	static
+pressure_sensor_bmp3.c:229:13:delay_ms	16	static
+pressure_sensor_bmp3.c:248:15:spi_reg_write	128	static
+pressure_sensor_bmp3.c:270:15:spi_reg_read	128	static
+pressure_sensor_bmp3.c:287:6:bmp3_print_rslt	96	static

@@ -1,0 +1,2 @@
+dataLogging.c:38:9:isMeasurementEmpty	24	static
+dataLogging.c:55:6:loggingTask	1136	dynamic

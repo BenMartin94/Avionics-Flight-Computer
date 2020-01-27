@@ -1,0 +1,9 @@
+pressure_sensor_bmp280.c:68:8:init_bmp280_sensor	32	static
+pressure_sensor_bmp280.c:108:10:bmp280_get_press	24	static
+pressure_sensor_bmp280.c:122:9:bmp280_get_temp	24	static
+pressure_sensor_bmp280.c:137:16:bmp280_config	24	static
+pressure_sensor_bmp280.c:167:6:vTask_pressure_sensor_280	32	static
+pressure_sensor_bmp280.c:201:13:delay_ms	16	static
+pressure_sensor_bmp280.c:219:15:spi_reg_write	128	static
+pressure_sensor_bmp280.c:241:15:spi_reg_read	128	static
+pressure_sensor_bmp280.c:258:13:print_rslt	96	static
