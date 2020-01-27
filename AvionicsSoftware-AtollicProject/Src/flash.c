@@ -115,9 +115,9 @@ FlashStatus_t 	erase_sector(FlashStruct_t * flash,uint32_t address){
 
 		enable_write(flash);
 
-		uint8_t command_address [] = { ERASE_SEC_COMMAND, (address & (HIGH_BYTE_MASK_24B))>>16, (address & (MID_BYTE_MASK_24B))>>8, address & (LOW_BYTE_MASK_24B)};
+		uint8_t command_address [] = { ERASE_SEC_COMMAND, (address & (EXTRA_HIGH_BYTE_MASK_32B))>>24,(address & (HIGH_BYTE_MASK_24B))>>16, (address & (MID_BYTE_MASK_24B))>>8, address & (LOW_BYTE_MASK_24B)};
 
-		spi_send(flash->hspi,command_address,4,NULL,0,10);
+		spi_send(flash->hspi,command_address,5,NULL,0,10);
 
 		result = FLASH_OK;
 	}
@@ -139,9 +139,9 @@ FlashStatus_t 	erase_param_sector(FlashStruct_t * flash,uint32_t address){
 
 		enable_write(flash);
 
-		uint8_t command_address [] = { ERASE_PARAM_SEC_COMMAND, (address & (HIGH_BYTE_MASK_24B))>>16, (address & (MID_BYTE_MASK_24B))>>8, address & (LOW_BYTE_MASK_24B)};
+		uint8_t command_address [] = { ERASE_PARAM_SEC_COMMAND, (address & (EXTRA_HIGH_BYTE_MASK_32B))>>24, (address & (HIGH_BYTE_MASK_24B))>>16, (address & (MID_BYTE_MASK_24B))>>8, address & (LOW_BYTE_MASK_24B)};
 
-		spi_send(flash->hspi,command_address,4,NULL,0,10);
+		spi_send(flash->hspi,command_address,5,NULL,0,10);
 
 		result = FLASH_OK;
 	}
