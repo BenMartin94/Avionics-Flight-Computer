@@ -52,7 +52,7 @@ void MX_GPIO_Init();
 void vTask_starter(void * pvParams);
 
 
-int main(void){
+int main2(void){
     HAL_Init();
 
     /* Configure the system clock */
@@ -90,7 +90,7 @@ int main(void){
     }
 }
 
-int main2(void)
+int main(void)
 
 
 {
