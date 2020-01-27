@@ -1,0 +1,7 @@
+stm32f4xx_hal_uart_io.c:60:6:MX_HAL_UART2_Init	40	static
+stm32f4xx_hal_uart_io.c:97:6:MX_HAL_UART6_Init	48	static
+stm32f4xx_hal_uart_io.c:133:6:transmit	24	static
+stm32f4xx_hal_uart_io.c:145:6:transmit_line	24	static
+stm32f4xx_hal_uart_io.c:161:6:transmit_bytes	24	static
+stm32f4xx_hal_uart_io.c:169:7:receive_command	24	static
+stm32f4xx_hal_uart_io.c:215:13:Error_Handler_UART	4	static

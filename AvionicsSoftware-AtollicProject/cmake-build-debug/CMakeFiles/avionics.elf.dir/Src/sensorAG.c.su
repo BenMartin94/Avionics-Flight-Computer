@@ -1,0 +1,6 @@
+sensorAG.c:74:6:vTask_sensorAG	56	static
+sensorAG.c:156:8:accel_config	32	static
+sensorAG.c:193:8:gyro_config	32	static
+sensorAG.c:219:8:user_spi_read	120	static
+sensorAG.c:236:8:user_spi_write	120	static
+sensorAG.c:248:6:delay	16	static

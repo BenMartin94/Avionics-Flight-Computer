@@ -52,7 +52,7 @@
 // Returns:
 //  Returns a status. Will be FLASH_BUSY if there is another operation in progress, FLASH_OK otherwise.
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
-FlashStatus_t		enable_write(FlashStruct_t * flash);
+//FlashStatus_t		enable_write(FlashStruct_t * flash);
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS
@@ -77,6 +77,27 @@ FlashStatus_t enable_write(FlashStruct_t * flash){
 		result = FLASH_OK;
 	}
 	return result;
+}
+
+FlashStatus_t disable_write(FlashStruct_t * flash){
+    FlashStatus_t result = FLASH_ERROR;
+
+    uint8_t status_reg = get_status_reg(flash);
+
+
+    if(IS_DEVICE_BUSY(status_reg)){
+
+        result = FLASH_BUSY;
+    }
+    else{
+
+        uint8_t command = WD_COMMAND;
+
+        spi_transmit(flash->hspi,&command,NULL,1,10);
+
+        result = FLASH_OK;
+    }
+    return result;
 }
 
 FlashStatus_t 	erase_sector(FlashStruct_t * flash,uint32_t address){

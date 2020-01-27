@@ -1,0 +1,6 @@
+set MINGW_ENV_PATH= "C:\MinGW\bin"
+set CLION_PATH= "C:\dev\apps\clion\bin"
+set CLION_CMAKE_PATH= "C:\dev\apps\clion\bin\cmake\win\bin"
+set ARM_TOOLS_DIR= "C:\dev\apps\ARM\tools\bin"
+set SOURCE_PATH= "C:\dev\projects\Avionics-Flight-Computer\AvionicsSoftware-AtollicProject"
+set EABI_PREFIX= "arm-none-eabi"

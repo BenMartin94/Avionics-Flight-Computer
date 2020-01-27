@@ -51,7 +51,42 @@ char testIMU();
 void MX_GPIO_Init();
 void vTask_starter(void * pvParams);
 
-int main(void)
+
+int main(void){
+    HAL_Init();
+
+    /* Configure the system clock */
+    SystemClock_Config();
+
+    /* Initialize all configured peripherals */
+    MX_GPIO_Init(); //GPIO MUST be firstly initialized
+    flash.hspi = flash_spi;
+    FlashStatus_t flash_stat =initialize_flash(&flash);
+    uint8_t temp;
+    uint8_t myTestData[100];
+    uint8_t recieveData[150];
+    uint32_t testAdd = 0x400000;
+    int i = 0;
+    for(i;i<100;i++){
+        myTestData[i] = i;
+    }
+    i=0;
+    for(i;i<150;i++){
+        recieveData[i] = 20;
+    }
+    flash_stat = program_page(&flash, testAdd, myTestData, 100);
+    read_page(&flash, testAdd, recieveData, 150);
+    while(1){
+
+        enable_write(&flash);
+        temp = get_status_reg(&flash);
+        disable_write(&flash);
+        temp = get_status_reg(&flash);
+
+    }
+}
+
+int main2(void)
 
 
 {

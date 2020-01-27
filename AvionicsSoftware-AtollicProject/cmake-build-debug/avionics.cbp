@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="avionics"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\generated\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMSIS_LIB">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/libCMSIS_LIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMSIS_LIB"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CMSIS_LIB/fast">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/libCMSIS_LIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 CMSIS_LIB/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RTOS_LIB">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/libRTOS_LIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 RTOS_LIB"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RTOS_LIB/fast">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/libRTOS_LIB.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 RTOS_LIB/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="avionics.elf">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/bin/avionics.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 avionics.elf"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="avionics.elf/fast">
+				<Option output="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/bin/avionics.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSTM32F401xE"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Inc"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/include"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F"/>
+					<Add directory="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/BMI08x-Sensor-API"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/arm-none-eabi"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include/c++/7.3.1/backward"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/include-fixed"/>
+					<Add directory="c:\dev\apps\arm\tools\bin\../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 avionics.elf/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="upload">
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 upload"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/croutine.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/list.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/queue.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/tasks.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Middlewares/Third_Party/FreeRTOS/Source/timers.c">
+			<Option target="RTOS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/STM32F401RE_FLASH.ld">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/SPI.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/altimeter.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/bmi088.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/bmi08a.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/bmi08g.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/bmp280.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/bmp3.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/buttonpress.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/buzzer.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/configuration.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/dataLogging.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/flash.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/freertos.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/main.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/pressure_sensor_bmp280.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/pressure_sensor_bmp3.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/recovery.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/sensorAG.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/startupTask.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/stm32f4xx_hal_msp.c">
+			<Option target="CMSIS_LIB"/>
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/stm32f4xx_hal_timebase_tim.c">
+			<Option target="CMSIS_LIB"/>
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/stm32f4xx_hal_uart_io.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/stm32f4xx_it.c">
+			<Option target="CMSIS_LIB"/>
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/system_stm32f4xx.c">
+			<Option target="CMSIS_LIB"/>
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/timer.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/Src/xtract.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/startup/startup_stm32f401xe.s">
+			<Option target="CMSIS_LIB"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/syscalls.c">
+			<Option target="avionics.elf"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/generated/CMakeConfigFile.cmake">
+			<Option virtualFolder="CMake Files\generated\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

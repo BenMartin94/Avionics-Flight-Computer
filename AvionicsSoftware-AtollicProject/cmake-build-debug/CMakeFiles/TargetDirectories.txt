@@ -1,0 +1,6 @@
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/CMSIS_LIB.dir
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/RTOS_LIB.dir
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/avionics.elf.dir
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/upload.dir
+C:/dev/projects/Avionics-Flight-Computer/AvionicsSoftware-AtollicProject/cmake-build-debug/CMakeFiles/edit_cache.dir
