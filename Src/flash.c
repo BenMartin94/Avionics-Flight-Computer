@@ -62,6 +62,12 @@ FlashStatus enable_write(Flash flash)
  * a developer should modify this function to his needs to keep this function as a generic interface forever
  * @see https://github.com/UMSATS/Avionics-2019/
  */
+
+
+ /*READ MEEEEEEE
+ I changed this portion
+It is untested but I only changed line 88 and line 95
+ */
 FlashStatus execute_command(Flash flash, uint32_t address, uint8_t command, uint8_t *data_buffer, uint16_t num_bytes)
 {
     uint8_t status_reg = flash_get_status_register(flash);
@@ -78,15 +84,15 @@ FlashStatus execute_command(Flash flash, uint32_t address, uint8_t command, uint
         }
         else
         {
-            uint8_t command_address[] =
-            {
-                (command),
-                (address & (FLASH_HIGH_BYTE_MASK_24B)) >> 16,
-                (address & (FLASH_MID_BYTE_MASK_24B))  >> 8 ,
-                (address & (FLASH_LOW_BYTE_MASK_24B))
-            };
 
-            spi_send(flash->spi_handle, command_address, 4, data_buffer, num_bytes, 10);
+            uint8_t command_address [] = { command,
+                (address & (EXTRA_HIGH_BYTE_MASK_32B))>>24,
+                (address & (HIGH_BYTE_MASK_24B))>>16,
+                (address & (MID_BYTE_MASK_24B))>>8,
+                address & (LOW_BYTE_MASK_24B)};
+
+
+            spi_send(flash->spi_handle, command_address, 5, data_buffer, num_bytes, 10);
             return FLASH_OK;
         };
     }
@@ -174,12 +180,12 @@ Flash flash_initialize()
     flash->spi_handle = spi1_init();
 
     HAL_GPIO_WritePin(FLASH_SPI_CS_PORT, FLASH_SPI_CS_PIN, GPIO_PIN_SET);
-    
+
     if(FLASH_ERROR == flash_check_id(flash))
     {
         return NULL;
     }
-    
+
     return flash;
 }
 
