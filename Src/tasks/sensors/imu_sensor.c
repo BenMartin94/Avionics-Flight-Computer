@@ -51,7 +51,7 @@ void delay_ms(uint32_t period);
 int8_t accel_config(configuration_data_t * configParams);
 int8_t gyro_config (configuration_data_t * configParams);
 
-
+//TODO probably deprecate
 static struct bmi08x_dev s_device = {
         .accel_id = 0,
         .gyro_id = 1,
@@ -62,7 +62,7 @@ static struct bmi08x_dev s_device = {
 };
 
 
-
+//TODO ABSOLUTELY deprecated
 int imu_sensor_init(configuration_data_t * parameters){
 
     int status = spi3_init();
@@ -71,10 +71,6 @@ int imu_sensor_init(configuration_data_t * parameters){
         return status;
     }
 
-    status = bmi088_init(&s_device); // bosch API initialization method
-    if(status != BMI08X_OK)
-        return status;
-
     s_queue = xQueueCreate(10, sizeof(imu_sensor_data));
     if (s_queue == NULL) {
         return 2;
@@ -82,23 +78,13 @@ int imu_sensor_init(configuration_data_t * parameters){
 
     vQueueAddToRegistry(s_queue, "bmi088_queue");
 
-    status = accel_config(parameters);
-    if(status != BMI08X_OK)
-    {
-        return status;
-    }
 
-    status = gyro_config(parameters);
-    if(status != BMI08X_OK)
-    {
-        return status;
-    }
 
     return BMI08X_OK;
 }
 
 
-
+//TODO internals probably need to change
 void imu_thread_start(void const *param)
 {
     //Get the parameters.
@@ -140,12 +126,12 @@ void imu_thread_start(void const *param)
         vTaskDelayUntil(&prevTime,configParams->values.data_rate);
     }
 }
-
+//TODO may not need to change
 bool imu_read(imu_sensor_data * buffer, uint8_t data_rate)
 {
     return pdPASS == xQueueReceive(s_queue, buffer, data_rate);
 }
-
+//TODO probably deprecated...
 void imu_sensor_data_to_bytes(imu_sensor_data reading, uint8_t* buffer, uint32_t timestamp)
 {
     // Make sure time doesn't overwrite type and event bits.
@@ -160,65 +146,9 @@ void imu_sensor_data_to_bytes(imu_sensor_data reading, uint8_t* buffer, uint32_t
 }
 
 //set the accelerometer starting configurations
-int8_t accel_config(configuration_data_t * configParams){
-    uint8_t data = 0;
-    int8_t rslt;
 
-    /* Read accel chip id */
-    rslt = bmi08a_get_regs(BMI08X_ACCEL_CHIP_ID_REG, &data, 1, &s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-    
-    /* Assign the desired configurations */
-    //Not sure yet what configurations we want
-    s_device.accel_cfg.bw = ACC_BANDWIDTH;
-    s_device.accel_cfg.odr = ACC_ODR;
-    s_device.accel_cfg.range = ACC_RANGE;
-    s_device.accel_cfg.power = ACC_PWR;
-
-    rslt = bmi08a_set_power_mode(&s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-    /* Wait for 10ms to switch between the power modes - delay_ms taken care inside the function*/
-
-    rslt = bmi08a_set_meas_conf(&s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-
-    return rslt;
-}
 
 //set the accelerometer starting configurations
-int8_t gyro_config(configuration_data_t * configParams)
-{
-    uint8_t data = 0;
-    int8_t rslt;
-
-    /* Read gyro chip id */
-    rslt = bmi08g_get_regs(BMI08X_GYRO_CHIP_ID_REG, &data, 1, &s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-    
-    
-    //set power mode
-    s_device.gyro_cfg.power = GYRO_PWR;
-    rslt = bmi08g_set_power_mode(&s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-    
-    /* Wait for 30ms to switch between the power modes - delay_ms taken care inside the function*/
-    /* Assign the desired configurations */
-   s_device.gyro_cfg.odr = GYRO_ODR;
-   s_device.gyro_cfg.range = GYRO_RANGE;
-   s_device.gyro_cfg.bw = GYRO_BANDWIDTH;
-   s_device.gyro_id = data;
-
-    rslt = bmi08g_set_meas_conf(&s_device);
-    if(rslt != BMI08X_OK)
-        return rslt;
-    
-    return rslt;
-}
 
 int8_t user_spi_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t len)
 {
@@ -238,13 +168,18 @@ int8_t user_spi_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t
             return status;
         }
     }
+    else if(dev_addr = ICM_ADDRESS){
+        if((status = spi3_receive(&reg_addr,1, data, len, 11)) != 0)
+        {
+            return status;
+        }
+    }
 
     //delay_ms(500);
     //HAL_GPIO_WritePin(USR_LED_PORT,USR_LED_PIN, GPIO_PIN_RESET);
     //delay_ms(500);
     return BMI08X_OK;
 }
-
 int8_t user_spi_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t len){
 
     if(dev_addr == 0x00 || dev_addr == 0x1E){
@@ -252,6 +187,10 @@ int8_t user_spi_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_
     }
     else if(dev_addr == 0x01 || dev_addr == 0x0F){
         spi3_send(&reg_addr,1, data, len, 11);
+    }
+    else if(dev_addr = ICM_ADDRESS){
+        spi3_send(&reg_addr,1, data, sizeof(data), 11);
+
     }
     return BMI08X_OK;
 }
@@ -272,13 +211,16 @@ int imu_sensor_test()
 //    if(result != BMI08X_OK)
 //        return false;
     
-    char res = 0;
-    uint8_t id = 0x1E;
-    
+    uint8_t res = 0;
+    uint8_t id = 0xEA;
+    res = ICM_WHOAMI();
+    if(res == id)
+        return 1;
+    /* OLD STUFF
     uint8_t command[] = {0x80};
     uint8_t id_read[] = {0x00,0x00,0x00,0x00};
     uint8_t id_dummy[] = {0x00,0x00};
-    
+    read
     
     spi3_receive(command,1,id_dummy,2,10);
     spi3_receive(command,1,id_read,2,10);
@@ -298,54 +240,37 @@ int imu_sensor_test()
     if(res == 2)
     {
         return 1;
-    }
+    }*/
     
     return 0;
 }
-
 bool imu_add_measurement (imu_sensor_data * _data)
 {
     return pdTRUE == xQueueSend(s_queue, _data,1);
 }
 
 //start of new stuff
-
+//___________________________________________________________________________________________________
 void ICM_readBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 {
     reg = reg | 0x80;
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_RESET);
-    HAL_SPI_Transmit_DMA(SPI_BUS, &reg, 1);
-    HAL_SPI_Receive_DMA(SPI_BUS, pData, Size);
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_SET);
+    user_spi_read(ICM_ADDRESS, &reg, pData, Size);
 }
 void ICM_WriteBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 {
     reg = reg & 0x7F;
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_RESET);
-    HAL_SPI_Transmit_DMA(SPI_BUS, &reg, 1);
-    HAL_SPI_Transmit_DMA(SPI_BUS, pData, Size);
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_SET);
+    user_spi_write(ICM_ADDRESS, &reg, pData, Size)
 
 }
 void ICM_ReadOneByte(uint8_t reg, uint8_t* pData) // ***
 {
     reg = reg | 0x80;
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_RESET);
-    HAL_SPI_Transmit_DMA(SPI_BUS, &reg, 1);
-    while (HAL_SPI_GetState(SPI_BUS) != HAL_SPI_STATE_READY)
-        ;
-    HAL_SPI_Receive_DMA(SPI_BUS, pData, 1);
-    while (HAL_SPI_GetState(SPI_BUS) != HAL_SPI_STATE_READY)
-        ;
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_SET);
+    ICM_readBytes(reg, pData, 1)
 }
 void ICM_WriteOneByte(uint8_t reg, uint8_t Data) // ***
 {
     reg = reg & 0x7F;
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_RESET);
-    HAL_SPI_Transmit_DMA(SPI_BUS, &reg, 1);
-    HAL_SPI_Transmit_DMA(SPI_BUS, &Data, 1);
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, GPIO_PIN_SET);
+    ICM_WriteBytes(reg, &Data, 1)
 }
 /*
  *

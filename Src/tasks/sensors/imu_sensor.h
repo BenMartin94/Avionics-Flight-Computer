@@ -20,7 +20,7 @@
 
 #define ACC_LENGTH  6 // Length of a accelerometer measurement in bytes.
 #define GYRO_LENGTH 6 // Length of a gyroscope measurement in bytes.
-
+#define ICM_ADDRESS 0x68//TODO lol this is prob wrong
 
 //Groups both sensor readings and a time stamp.
 typedef struct imu_sensor_data
@@ -32,6 +32,10 @@ typedef struct imu_sensor_data
     int16_t    gyro_x;
     int16_t    gyro_y;
     int16_t    gyro_z;
+
+    int16_t    mag_x;
+    int16_t    mag_y;
+    int16_t    mag_z;
     
     uint32_t   time_ticks; // time of sensor reading in ticks.
 }imu_sensor_data;
