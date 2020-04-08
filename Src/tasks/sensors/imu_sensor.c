@@ -239,11 +239,14 @@ bool imu_add_measurement (imu_sensor_data * _data)
 
 //start of new stuff
 //___________________________________________________________________________________________________
+
+//CHANGE THIS METHOD TO DEPEND ON OUR SPI INTERFACE!!!!!!!
 void ICM_readBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 {
     reg = reg | 0x80;
     user_spi_read(ICM_ADDRESS, &reg, pData, Size);
 }
+//CHANGE THIS METHOD TO DEPEND ON OUR SPI INTERFACE!!!!!!!
 void ICM_WriteBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 {
     reg = reg & 0x7F;
