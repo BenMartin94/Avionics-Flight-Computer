@@ -52,14 +52,7 @@ int8_t accel_config(configuration_data_t * configParams);
 int8_t gyro_config (configuration_data_t * configParams);
 
 //TODO probably deprecate
-static struct bmi08x_dev s_device = {
-        .accel_id = 0,
-        .gyro_id = 1,
-        .intf = BMI08X_SPI_INTF, // determines if we use SPI or I2C
-        .read = user_spi_read,   //a function pointer to our spi read function
-        .write = user_spi_write, //a function pointer to our spi write function
-        .delay_ms = delay_ms//user_delay_milli_sec
-};
+
 
 
 //TODO ABSOLUTELY deprecated
@@ -80,7 +73,7 @@ int imu_sensor_init(configuration_data_t * parameters){
 
 
 
-    return BMI08X_OK;
+    return 1;
 }
 
 
@@ -98,27 +91,22 @@ void imu_thread_start(void const *param)
     prevTime=xTaskGetTickCount();
     
     int8_t result_flag;
-    struct bmi08x_sensor_data container;
+
     while(1){
         
-        result_flag = bmi08a_get_data(&container, &s_device);
-        if(BMI08X_E_NULL_PTR == result_flag)
-        {
-            continue;
-        }
-        dataStruct.acc_x = container.x,
-        dataStruct.acc_y = container.y,
-        dataStruct.acc_z = container.z;
+        ICM_ReadAccelGyro();
+
+        dataStruct.acc_x = accel_data[0],
+        dataStruct.acc_y = accel_data[1],
+        dataStruct.acc_z = accel_data[2];
+
+
         
-        result_flag = bmi08g_get_data(&container, &s_device);
-        if(BMI08X_E_NULL_PTR == result_flag)
-        {
-            continue;
-        }
+        dataStruct.gyro_x = gyro_data[0],
+        dataStruct.gyro_y = gyro_data[1],
+        dataStruct.gyro_z = gyro_data[2];
         
-        dataStruct.gyro_x = container.x,
-        dataStruct.gyro_y = container.y,
-        dataStruct.gyro_z = container.z;
+        //I did not double check these indicies, if it looks like the driver is rotated check the datasheet!!!
         
         dataStruct.time_ticks = xTaskGetTickCount();
 
@@ -178,7 +166,7 @@ int8_t user_spi_read(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t
     //delay_ms(500);
     //HAL_GPIO_WritePin(USR_LED_PORT,USR_LED_PIN, GPIO_PIN_RESET);
     //delay_ms(500);
-    return BMI08X_OK;
+    return 1;
 }
 int8_t user_spi_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_t len){
 
@@ -192,7 +180,7 @@ int8_t user_spi_write(uint8_t dev_addr, uint8_t reg_addr, uint8_t *data, uint16_
         spi3_send(&reg_addr,1, data, sizeof(data), 11);
 
     }
-    return BMI08X_OK;
+    return 1;
 }
 
 void delay_ms(uint32_t period)
@@ -259,18 +247,18 @@ void ICM_readBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 void ICM_WriteBytes(uint8_t reg, uint8_t *pData, uint16_t Size) // ***
 {
     reg = reg & 0x7F;
-    user_spi_write(ICM_ADDRESS, &reg, pData, Size)
+    user_spi_write(ICM_ADDRESS, &reg, pData, Size);
 
 }
 void ICM_ReadOneByte(uint8_t reg, uint8_t* pData) // ***
 {
     reg = reg | 0x80;
-    ICM_readBytes(reg, pData, 1)
+    ICM_readBytes(reg, pData, 1);
 }
 void ICM_WriteOneByte(uint8_t reg, uint8_t Data) // ***
 {
     reg = reg & 0x7F;
-    ICM_WriteBytes(reg, &Data, 1)
+    ICM_WriteBytes(reg, &Data, 1);
 }
 /*
  *
@@ -417,8 +405,8 @@ uint16_t ICM_Initialize(void) {
     i2c_Mag_write(0x32, 0x01); // Reset AK8963
     HAL_Delay(1000);
     i2c_Mag_write(0x31, 0x02); // use i2c to set AK8963 working on Continuous measurement mode1 & 16-bit output
-
     return 1337;
+
 }
 
 void ICM_ReadAccelGyro(void) {
@@ -448,10 +436,10 @@ void ICM_Disable_I2C(void) {
     ICM_WriteOneByte(0x03, 0x78);
 }
 void ICM_CSHigh(void) {
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, SET);
+    //HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, SET);
 }
 void ICM_CSLow(void) {
-    HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, RESET);
+    //HAL_GPIO_WritePin(ICM_CS_GPIO_Port, ICM_CS_Pin, RESET);
 }
 void ICM_SetClock(uint8_t clk) {
     ICM_WriteOneByte(PWR_MGMT_1, clk);
